@@ -1,3 +1,4 @@
+import math
 class CalculatorLogic:
     def __init__(self):
         self.first_num=None
@@ -21,6 +22,7 @@ class CalculatorLogic:
         if(self.operation=="power"):
             return self.first_value**self.second_value
         
+        
     def get_val_and_square(self,first_num):
         self.first_value = float(first_num)*float(first_num)
         return self.first_value
@@ -29,7 +31,18 @@ class CalculatorLogic:
         self.calculated_value = float(first_num)**(1/2)  # 5^(1/2)= rootunder(5)
         return self.calculated_value
 
-
+    def get_val_and_find_sin(self,first_num):
+        self.value = math.sin(first_num)
+        return self.value
+    def get_val_and_find_cos(self,first_num):
+        self.value = math.cos(first_num)
+        return self.value
+    def get_val_and_find_tan(self,first_num):
+        self.value = math.tan(first_num)
+        return self.value
+    def get_val_and_find_e(self,first_num):
+        self.value = math.exp(first_num)
+        return self.value
 
     # def button_click(self,number):
     #     self.current = self.e.get()

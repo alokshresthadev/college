@@ -1,6 +1,7 @@
 from tkinter import *
 from Logic import CalculatorLogic
 
+
 class CalculatorUI:
 
     def __init__(self):
@@ -19,30 +20,41 @@ class CalculatorUI:
         self.math=None
 
         self.Logic = CalculatorLogic()
+
+        self.resetter = 0 #chat ko concept ho hai yo chahi, yesley chahi k garxa bhanda like mero answer ayo tara aba maile new value lekhda tei append hunxa normally but after this concept i get new buffer to write on
         
     def button_add(self):
         self.first_val = self.e.get()
         self.Logic.get_first_val_and_operator(self.first_val,"add")
         self.e.delete(0,END)
+        self.resetter = 1
 
     def button_divide(self):
         self.first_val = float(self.e.get())
         self.Logic.get_first_val_and_operator(self.first_val,"division")
         self.e.delete(0,END)
+        self.resetter = 1
     
     def button_multiply(self):
         self.first_val = float(self.e.get())
         self.Logic.get_first_val_and_operator(self.first_val,"multiplication")
         self.e.delete(0,END)
+        self.resetter = 1
     
     def button_subtract(self):
         self.first_val = float(self.e.get())
         self.Logic.get_first_val_and_operator(self.first_val,"subtract")
         self.e.delete(0,END)
+        self.resetter = 1
 
 
     #class haru use garyo bhandai ma yo chahi falnu bhayena !! THIS IS WHAT DISPLAYS VALUE IN THE CALCULATOR || USER KO VALUE DEKHAUXA
     def button_click(self,number):
+
+        if self.resetter == 1:
+            self.e.delete(0,END)
+            self.resetter = 0
+
         self.current = self.e.get()
         self.e.delete(0,END)
         self.e.insert(0,str(self.current)+str(number))
@@ -62,6 +74,7 @@ class CalculatorUI:
         self.e.delete(0,END)
         self.rooted = self.Logic.get_val_and_square_root(self.current)
         self.e.insert(0,self.rooted)
+        self.resetter = 1
 
 
     def button_square(self):
@@ -69,44 +82,69 @@ class CalculatorUI:
         self.e.delete(0,END)
         self.squared_val=self.Logic.get_val_and_square(self.current)
         self.e.insert(0,self.squared_val)
+        self.resetter = 1
     
     def button_equals(self):
         self.second_val=float(self.e.get())
         self.e.delete(0,END)
         self.e.insert(0,self.Logic.get_second_val_and_calculate(self.second_val))
+        self.resetter = 1
 
     
     def button_power(self):
         self.first_val = self.e.get()
         self.Logic.get_first_val_and_operator(self.first_val,"power")
         self.e.delete(0,END)
+        self.resetter = 1
     
     def button_dot(self):
         return
     
     def button_pie(self):
-        return
+        self.val = self.e.get()
+        self.e.delete(0,END)
+        self.e.insert(END,str(3.1415926))
     
     def button_exp(self):
-        return
+        self.val = float(self.e.get())
+        self.e.delete(0,END)
+        self.exp = self.Logic.get_val_and_find_e(self.val)
+        self.e.insert(0,self.exp)
+        self.resetter = 1
+
     
     def button_ans(self):
-        return   
+        self.second_val=float(self.e.get())
+        self.e.delete(0,END)
+        self.e.insert(0,self.Logic.get_second_val_and_calculate(self.second_val)) 
+        self.resetter = 1
      
+    def button_sin(self):
+        self.current = float(self.e.get())
+        self.e.delete(0,END)
+        self.sin_val=self.Logic.get_val_and_find_sin(self.current)
+        self.e.insert(END,self.sin_val)
+        self.resetter = 1
+    def button_cos(self):
+        self.current = float(self.e.get())
+        self.e.delete(0,END)
+        self.cos_val=self.Logic.get_val_and_find_cos(self.current)
+        self.e.insert(END,self.cos_val)
+        self.resetter = 1
+    def button_tan(self):
+        self.current = float(self.e.get())
+        self.e.delete(0,END)
+        self.tan_val=self.Logic.get_val_and_find_tan(self.current)
+        self.e.insert(END,self.tan_val)
+        self.resetter = 1
     def button_log(self):
         return
     
     def button_ln(self):
         return
     
-    def button_sin(self):
-        return
     
-    def button_cos(self):
-        return
-    
-    def button_tan(self):
-        return
+
     
     def button_python(self):
         return
