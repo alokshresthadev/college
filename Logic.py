@@ -1,9 +1,13 @@
+### ALOK SHRESTHA
+
+
 import math
 class CalculatorLogic:
     def __init__(self):
         self.first_num=None
         self.second_num=None
         self.math=None
+        # self.fact = 1.0
     
     def get_first_val_and_operator(self,first_num,operator):# suru ko value liney ani operator store garney just that much
         self.first_value = float(first_num)
@@ -43,6 +47,17 @@ class CalculatorLogic:
     def get_val_and_find_e(self,first_num):
         self.value = math.exp(first_num)
         return self.value
+    def get_val_and_find_log(self,first_num):
+        self.value = math.log10(first_num)
+        return self.value
+    def get_val_and_find_ln(self,first_num):
+        self.value = math.log(first_num)
+        return self.value
+    def get_val_and_find_fact(self,first_num):# factorial integer rw non negative number ko lagi matra ho so be ready for error
+        self.fact=1
+        for i in range(1,int(first_num)+1):
+            self.fact = self.fact*i
+        return self.fact 
 
     # def button_click(self,number):
     #     self.current = self.e.get()

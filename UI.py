@@ -1,7 +1,14 @@
+#### Alok Shrestha
+
+
 from tkinter import *
 from Logic import CalculatorLogic
 
-
+##### asm bhyayena so nothing to connect to 
+##### asm nabahyesi python shifter ko point bhayena so not done
+##### same reason for auto chooser
+##### paranthesis aayena k garney logic nai |||| might do it later while completing asm part
+##### history pani sakena
 class CalculatorUI:
 
     def __init__(self):
@@ -138,11 +145,22 @@ class CalculatorUI:
         self.e.insert(END,self.tan_val)
         self.resetter = 1
     def button_log(self):
-        return
-    
+        self.value = float(self.e.get())
+        self.e.delete(0,END)
+        self.e.insert(0,self.Logic.get_val_and_find_log(self.value))
+        self.resetter = 1
+
     def button_ln(self):
-        return
+        self.value = float(self.e.get())
+        self.e.delete(0,END)
+        self.e.insert(0,self.Logic.get_val_and_find_ln(self.value))
+        self.resetter = 1
     
+    def button_factorial(self): # factorial integer rw non negative number ko lagi matra ho so be ready for error
+        self.value = float(self.e.get())
+        self.e.delete(0,END)
+        self.e.insert(0,self.Logic.get_val_and_find_fact(self.value))
+        self.resetter = 1
     
 
     
@@ -158,8 +176,6 @@ class CalculatorUI:
     def button_history(self):
         return
     
-    def button_factorial(self):
-        return
 
     def button_Paranthesis(self):
         return
