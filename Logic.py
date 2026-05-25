@@ -22,6 +22,9 @@ class CalculatorLogic:
         if(self.operation=="multiplication"):
             return self.first_value*self.second_value
         if(self.operation=="division"):
+
+            try:
+                self.first_value/0
             return self.first_value/self.second_value
         if(self.operation=="power"):
             return self.first_value**self.second_value
@@ -59,116 +62,4 @@ class CalculatorLogic:
             self.fact = self.fact*i
         return self.fact 
 
-    # def button_click(self,number):
-    #     self.current = self.e.get()
-    #     self.e.delete(0,END)
-    #     self.e.insert(0,str(self.current)+str(number))
     
-    # def button_del(self):
-
-    #     self.e.delete(len(self.e.get())-1,END)   # This line is copied from Chatgpt Couldnot understand how to skip the index and get the second last value Note;;;;; have to search for another method
-    
-    # def button_clear(self):
-    #     self.e.delete(0,END)
-    
-    # def button_Paranthesis(self):
-    #     return
-    
-    # def button_divide(self):
-    #     self.first_num
-    #     self.math
-    #     self.math="division"
-    #     self.first_num=float(self.e.get())
-    #     self.e.delete(0,END)
-    
-    # def button_multiply(self):
-    #     self.first_num
-    #     self.math
-    #     self.math="multiplication"
-    #     self.first_num=float(self.e.get())
-    #     self.e.delete(0,END)
-    
-    # def button_subtract(self):
-    #     self.first_num
-    #     self.math
-    #     self.math="subtraction"
-    #     self.first_num=float(self.e.get())
-    #     self.e.delete(0,END)
-
-    # def button_sqrt(self):
-    #     self.first_num
-    #     self.math
-    #     self.math="sqrt"
-    #     self.first_num=float(self.e.get())
-    #     self.e.delete(0,END)
-
-    # def button_add(self):
-    #     self.first_num
-    #     self.math
-    #     self.math="addition"
-    #     self.first_num=float(self.e.get())
-    #     self.e.delete(0,END)
-
-    # def button_square(self):
-    #     self.current = self.e.get()
-    #     self.e.delete(0,END)
-    #     self.e.insert(0,float(self.current)*float(self.current))
-    
-    # def button_equals(self):
-    #     self.second_num
-    #     self.second_num=float(self.e.get())
-    #     self.e.delete(0,END)
-
-    #     if(self.math == "addition"):
-    #         self.e.insert(0,self.first_num + self.second_num)
-    #     if(self.math == "subtraction"):
-    #         self.e.insert(0,self.first_num - self.second_num)
-    #     if(self.math == "multiplication"):
-    #         self.e.insert(0,self.first_num * self.second_num)
-    #     if(self.math == "division"):
-    #         self.e.insert(0,self.first_num / self.second_num)
-    
-    # def button_power(self):
-    #     return
-    
-    # def button_dot(self):
-    #     return
-    
-    # def button_pie(self):
-    #     return
-    
-    # def button_exp(self):
-    #     return
-    
-    # def button_ans(self):
-    #     return   
-     
-    # def button_log(self):
-    #     return
-    
-    # def button_ln(self):
-    #     return
-    
-    # def button_sin(self):
-    #     return
-    
-    # def button_cos(self):
-    #     return
-    
-    # def button_tan(self):
-    #     return
-    
-    # def button_python(self):
-    #     return
-    
-    # def button_asm(self):
-    #     return
-    
-    # def button_auto(self):
-    #     return
-    
-    # def button_history(self):
-    #     return
-    
-    # def button_factorial(self):
-    #     return
