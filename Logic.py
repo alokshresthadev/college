@@ -30,7 +30,7 @@ class CalculatorLogic:
                 return self.first_value / self.second_value
             except ZeroDivisionError:
                 return "Error: Cannot divide by zero"
-        
+        #nothing
         if(self.operation=="power"):
             return self.first_value**self.second_value
         
