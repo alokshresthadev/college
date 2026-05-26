@@ -195,7 +195,7 @@ class CalculatorUI:
         self.Button_0 = Button(self.root,text="0",padx=20,pady=5,width=5,command=lambda: self.button_click(0))
         self.Button_del = Button(self.root,text="del",padx=20,pady=5,width=5,command=self.button_del)
         self.Button_clear = Button(self.root,text="C",padx=20,pady=5,width=5,command=self.button_clear)
-        self.Button_paranthesis = Button(self.root,text="()",padx=20,pady=5,width=5,command=self.button_Paranthesis)
+        self.Button_paranthesis = Button(self.root,text="(   )",padx=20,pady=5,width=5,command=self.button_Paranthesis)
         self.Button_divide = Button(self.root,text="/",padx=20,pady=5,width=5,command=self.button_divide)
         self.Button_multiply = Button(self.root,text="*",padx=20,pady=5,width=5,command=self.button_multiply)
         self.Button_subtract = Button(self.root,text="-",padx=20,pady=5,width=5,command=self.button_subtract)

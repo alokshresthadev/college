@@ -17,15 +17,20 @@ class CalculatorLogic:
         self.second_value = float(second_num)
         if(self.operation=="add"):
             return self.first_value+self.second_value
+        
         if(self.operation=="subtract"):
             return self.first_value-self.second_value
+        
         if(self.operation=="multiplication"):
             return self.first_value*self.second_value
+        
         if(self.operation=="division"):
-
+            self.value = None
             try:
-                self.first_value/0
-            return self.first_value/self.second_value
+                return self.first_value / self.second_value
+            except ZeroDivisionError:
+                return "Error: Cannot divide by zero"
+        
         if(self.operation=="power"):
             return self.first_value**self.second_value
         
